@@ -32,9 +32,9 @@ class Vector {
 		void operator()(double x, double y, double z){ _x=x; _y=y; _z=z; }
 
 		// Selectors
-		double X() const { return _x; }
-		double Y() const { return _y; }
-		double Z() const { return _z; }
+		double x() const { return _x; }
+		double y() const { return _y; }
+		double z() const { return _z; }
 		int isUnit() const { return _status==UNIT; }
 		int isDefault() const { return _status==DEFAULT; }
 		int isValid() const { return _status!=INVALID; }
@@ -49,11 +49,11 @@ class Vector {
 		static Vector Default(const Vector &v) { return Vector(v).Default(); }
 
 		// Magnitude
-		double mag() const { return (isValid() ? (isUnit() ? 1.0 : sqrt(sqr(X()) + sqr(Y()) + sqr(Z()))) : 0.0); }
-		double magSqr() const { return (isValid() ? (isUnit() ? 1.0 : sqr(X()) + sqr(Y()) + sqr(Z())) : 0.0); }
+		double mag() const { return (isValid() ? (isUnit() ? 1.0 : sqrt(sqr(x()) + sqr(y()) + sqr(z()))) : 0.0); }
+		double magSqr() const { return (isValid() ? (isUnit() ? 1.0 : sqr(x()) + sqr(y()) + sqr(z())) : 0.0); }
 
 		// Dot or scalar product
-		double dot(const Vector &v) const { return ((isValid() && v.isValid()) ? (X()*v.X() + Y()*v.Y() + Z()*v.Z()) : 0.0); }
+		double dot(const Vector &v) const { return ((isValid() && v.isValid()) ? (x()*v.x() + y()*v.y() + z()*v.z()) : 0.0); }
 		static double dot(const Vector &v1, const Vector &v2) { return v1.dot(v2); }
 
 		// Distance between two vectors

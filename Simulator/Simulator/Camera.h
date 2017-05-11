@@ -6,9 +6,10 @@
 
 class Camera {
 private:
-	Vector eye, target, up;
+	Vector _eye, _target, _up;
 
 public:
-	void view();
+	Camera(Vector eye, Vector target, Vector up): _eye(eye), _target(target), _up(up) {}
+	void View();
 };
 #endif
