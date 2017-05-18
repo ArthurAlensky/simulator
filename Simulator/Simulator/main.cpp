@@ -1,5 +1,6 @@
 #include <GL\glew.h>
 #include <GL\freeglut.h>
+#include "Light.h"
 
 #define gWinWidth 1200
 #define gWinHeight 600
@@ -47,6 +48,7 @@ void main(int argc, char ** const argv) {
 	initGL();
 	init();
 
+	Light::Set({ 1.0, 1.0, 1.0 });
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);
 	glutIdleFunc(idle);
